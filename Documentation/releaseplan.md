@@ -62,3 +62,61 @@ code `geminimized`. Dit wordt vaak toegepast in front end elementen zoals `JavaS
 en `css` waarbij de code zo klein mogelijk wordt gemaakt.
 Hierdoor is de bestandsgrote kleiner en kan de pagina sneller laden.
 Bij de back end is dit niet een relevant concept.
+
+## Versiebeheer
+
+Binnen dit hoofdstuk wordt er uitgelegd hoe de versiebeheer van het project wordt
+geregeld. Dit gaat over zowel de keuze van tooling naar de inrichting van deze tooling.
+
+## Git
+
+Voor versiebeheer wordt het populaire `Git` systeem gebruikt.
+In het kort, Git slaat alleen de veranderingen tussen de laatste versie van de
+software (de laatste `commit`) en de huidige situatie op.
+Git doet dit op een efficiënte manier waardoor de bestandsgrote van een Git repository
+klein blijft.
+
+Er zijn verschillende website die een Git server voor opslag aanbieden.
+`BitBucket`, `GitLab` en `GitHub` zijn voorbeelden van de meest bekende websites.
+Er is binnen dit project gekozen om met `GitHub` te werken door de populariteit
+van de website en de compatibiliteit met software van andere partijen.
+
+### Git Flow
+
+Een standaard implementatie om Git versiebeheer aan te pakken is via een Git Flow.
+De meeste Git Flow implementaties gebruiken als basis 4 branches:
+
+- Master
+- Develop
+- Feature
+- Hotfix
+
+Op de **master** staat de huidige productie code. Dit betekend dat wanneer er een
+probleem in de productie is, deze hierop gebaseerd kan worden.
+
+Een **develop** branch is voor een onderdeel van het project. Dit kan zowel de
+opsplitsing zijn tussen front end en back end of tussen overkoepelende functies
+van de applicatie.
+Neem Spotify als voorbeeld. Er zou een `develop/player`, `develop/friends` en
+`develop/browser` kunnen zijn. Er is ook één generale develop genaamt `dev` (
+een branch mag niet dezelfde naam hebben als een map).
+In deze branch worden de verschillende develop branches samen gebracht voor een
+release.
+
+Het idee van meerdere develop branches is dat er aan meerdere onderdelen tegelijk
+gewerkt zonder dat deze nog in de `master` worden getrokken.
+
+Een **feature** branch wordt gebruikt om deze overkoepelende functies verder
+uit te bereiden. Als er terug gekeken wordt naar het Spotify voorbeeld,
+de volgende  *features* zouden onder de `develop/player` kunnen hangen.
+`feature/play`, `feature/shuffle`, `feature/repeat`, `feature/volume`.
+
+Als laatste is er de **hotfix**, deze branches worden gebruikt om kritieke
+aanpassingen te doen aan de code. Wanneer er een probleem wordt gemeld waarbij
+er een kritiek proces vast loopt kan een *hotfix* worden toegepast op de `master`
+branch.
+
+Om een archief te houden van oudere versies van de applicatie wordt er een
+`archive` map aangemaakt onder de Git branches.
+Wanneer er een nieuwe versie wordt uitgerold naar `master`, wordt er eerst de
+huidige `master` code verplaatst naar `archive/VERSIENUMMER`.
