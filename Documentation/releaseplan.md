@@ -49,7 +49,7 @@ om zo de werkomgeving schoon te houden.
 
 ### T: Test
 
-Voor de testers wordt een aparte server omgeving opgezet.
+Voor de testers wordt een aparte omgeving opgezet.
 Een tester komt dus van buiten af op de applicatie en hoeft geen tooling te hebben
 geïnstalleerd om de applicatie te besturen.
 Het kan zo zijn dat de tester eerst een VPN verbinding moet leggen naar de server
@@ -62,19 +62,19 @@ te verminderen.
 
 ### A: Acceptatie
 
-De acceptatie server wordt door de klant gebruikt om te testen of de versie van de
+De acceptatie omgeving wordt door de klant gebruikt om te testen of de versie van de
 applicatie klaar is om doorgezet te worden naar productie.
-Het is van belang dat deze server gelijk staat aan de productie server.
+Het is van belang dat deze omgeving gelijk staat aan de productie server.
 De klant moet geen verschil merken tussen de implementatie zoals deze nu is
 en wanneer de applicatie in productie wordt genomen.
 
-Net zoals bij test, wordt de server van buiten af benaderd en kan er een VPN
+Net zoals bij test, wordt de omgeving van buiten af benaderd en kan er een VPN
 verbinding nodig zijn om naar de applicatie te komen.
 
 ### P: Productie
 
-De productie server is vanaf buiten beschikbaar en heeft de nieuwste geaccepteerde
-versie van de applicatie draaiend. Voor de productie server hoeft geen VPN verbinding
+De productie omgeving is vanaf buiten beschikbaar en heeft de nieuwste geaccepteerde
+versie van de applicatie draaiend. Voor de productie omgeving hoeft geen VPN verbinding
 worden aangelegd.
 
 Om de performance van de omgeving optimaal te maken wordt hier waar mogelijk de
