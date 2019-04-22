@@ -7,8 +7,8 @@ Door Bart de Bever
 Dit is het release plan van de FightCore applicatie.
 FightCore is een blog post applicatie voor de populaire *Super Smash Bros.*
 videogame serie.
-FightCore werkt met een back end geschreven in C# .NET Core en een Angular 7
-front end.
+FightCore werkt met eenback end geschreven in C# .NET Core en een Angular 7
+frontend.
 
 - [Release Plan](#release-plan)
   - [Inleiding](#inleiding)
@@ -21,7 +21,8 @@ front end.
   - [Git](#git)
     - [Git Flow](#git-flow)
   - [Versie nummering](#versie-nummering)
-  - [Release process](#release-process)
+  - [Release proces](#release-proces)
+  - [Deliverables](#deliverables)
 
 ## OTAP
 
@@ -77,10 +78,10 @@ versie van de applicatie draaiend. Voor de productie server hoeft geen VPN verbi
 worden aangelegd.
 
 Om de performance van de omgeving optimaal te maken wordt hier waar mogelijk de
-code `geminimized`. Dit wordt vaak toegepast in front end elementen zoals `JavaScript`
+code `geminimized`. Dit wordt vaak toegepast in frontend elementen zoals `JavaScript`
 en `css` waarbij de code zo klein mogelijk wordt gemaakt.
 Hierdoor is de bestandsgrote kleiner en kan de pagina sneller laden.
-Bij de back end is dit niet een relevant concept.
+Bij de backend is dit niet een relevant concept.
 
 ## Versiebeheer
 
@@ -110,13 +111,14 @@ De meeste Git Flow implementaties gebruiken als basis 4 branches:
 - Feature
 - Hotfix
 
-Op de **master** staat de huidige productie code. Dit betekend dat wanneer er een
+Op de `master` staat de huidige productie code. Dit betekend dat wanneer er een
 probleem in de productie is, deze hierop gebaseerd kan worden.
 
-Een **develop** branch is voor een onderdeel van het project. Dit kan zowel de
+Een `develop` branch is voor een onderdeel van het project. Dit kan zowel de
 opsplitsing zijn tussen front end en back end of tussen overkoepelende functies
 van de applicatie.
-Neem Spotify als voorbeeld. Er zou een `develop/player`, `develop/friends` en
+Neem Spotify als voorbeeld. Er zou een `develop/player`
+`develop/friends` en
 `develop/browser` kunnen zijn. Er is ook één generale develop genaamt `dev` (
 een branch mag niet dezelfde naam hebben als een map).
 In deze branch worden de verschillende develop branches samen gebracht voor een
@@ -125,14 +127,14 @@ release.
 Het idee van meerdere develop branches is dat er aan meerdere onderdelen tegelijk
 gewerkt zonder dat deze nog in de `master` worden getrokken.
 
-Een **feature** branch wordt gebruikt om deze overkoepelende functies verder
+Een `feature` branch wordt gebruikt om deze overkoepelende functies verder
 uit te bereiden. Als er terug gekeken wordt naar het Spotify voorbeeld,
-de volgende  *features* zouden onder de `develop/player` kunnen hangen.
+de volgende  `features`  zouden onder de `develop/player` kunnen hangen.
 `feature/play`, `feature/shuffle`, `feature/repeat`, `feature/volume`.
 
-Als laatste is er de **hotfix**, deze branches worden gebruikt om kritieke
+Als laatste is er de `hotfix`, deze branches worden gebruikt om kritieke
 aanpassingen te doen aan de code. Wanneer er een probleem wordt gemeld waarbij
-er een kritiek proces vast loopt kan een *hotfix* worden toegepast op de `master`
+er een kritiek proces vast loopt kan een `hotfix` worden toegepast op de `master`
 branch.
 
 Om een archief te houden van oudere versies van de applicatie wordt er een
@@ -142,8 +144,8 @@ huidige `master` code verplaatst naar `archive/VERSIENUMMER`.
 
 ## Versie nummering
 
-Versies worden op via het *Semantic versioning* systeem gedaan.
-Hierbij een quote over hoe dit systeem werkt van de officiele website.
+Versies worden op via het `Semantic versioning` systeem gedaan.
+Hierbij een quote over hoe dit systeem werkt van de officiële website.
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
 >
@@ -160,4 +162,22 @@ om er voor te zorgen dat het versie nummer juist wordt opgehoogd.
 Er wordt met Semantic versies gewerkt maar dit wordt niet hard
 afgedwongen.
 
-## Release process
+---
+Opmerking: Het kan zo zijn dat er verouderde versies van de backend online blijven
+staan. Dit komt door het backwards-compatible houden van de backend. Hierdoor
+blijven de applicaties die andere ontwikkelaars hebben geschreven intact.
+
+---
+
+## Release proces
+
+## Deliverables
+
+Bij een release van het software product worden de volgende (bij) producten geleverd:
+
+- De backend API met een eigen developer portal.
+- De frontend apart gehost van de back-end.
+- Eventuele documentatie over het product
+- Zogeheten "patch notes" waarin genoteerd staat wat er is aangepast in deze versie.
+
+De documentatie en patch notes worden als aankondiging geplaatst op de frontend.
