@@ -10,6 +10,19 @@ videogame serie.
 FightCore werkt met een back end geschreven in C# .NET Core en een Angular 7
 front end.
 
+- [Release Plan](#release-plan)
+  - [Inleiding](#inleiding)
+  - [OTAP](#otap)
+    - [O: Ontwikkel](#o-ontwikkel)
+    - [T: Test](#t-test)
+    - [A: Acceptatie](#a-acceptatie)
+    - [P: Productie](#p-productie)
+  - [Versiebeheer](#versiebeheer)
+  - [Git](#git)
+    - [Git Flow](#git-flow)
+  - [Versie nummering](#versie-nummering)
+  - [Release process](#release-process)
+
 ## OTAP
 
 OTAP (ook wel DTAP genoemd in het Engels) is een term gebruikt bij het beschrijven
@@ -146,3 +159,5 @@ Het is aan de ontwikkelaar die de verandering doorzet naar de `master`
 om er voor te zorgen dat het versie nummer juist wordt opgehoogd.
 Er wordt met Semantic versies gewerkt maar dit wordt niet hard
 afgedwongen.
+
+## Release process
