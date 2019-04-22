@@ -171,6 +171,12 @@ blijven de applicaties die andere ontwikkelaars hebben geschreven intact.
 
 ## Release proces
 
+Het release proces wordt automatisch uitgevoerd wanneer een ontwikkelaar het
+project naar de `master` branch toe pushed. Hierbij wordt zowel automatisch
+de backend als de frontend online gezet. De eventuele bijproducten kunnen nog wel
+apart moeten worden aangemaakt en handmatig worden uitgebracht. In dit geval zal
+er in de centrale documentatie een pagina zijn over hoe dit uitgevoerd moet worden.
+
 ## Deliverables
 
 Bij een release van het software product worden de volgende (bij) producten geleverd:
