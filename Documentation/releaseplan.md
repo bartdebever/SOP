@@ -4,6 +4,12 @@ Door Bart de Bever
 
 ## Inleiding
 
+Dit is het release plan van de FightCore applicatie.
+FightCore is een blog post applicatie voor de populaire *Super Smash Bros.*
+videogame serie.
+FightCore werkt met een back end geschreven in C# .NET Core en een Angular 7
+front end.
+
 ## OTAP
 
 OTAP (ook wel DTAP genoemd in het Engels) is een term gebruikt bij het beschrijven
@@ -19,8 +25,8 @@ De software ontwikkelaar draait dan op zijn eigen machine een server met daarop
 de nieuw geschreven code.
 
 Bij dit project gaat dit op deze manier verlopen.
-Een ontwikkelaar draait lokaal de `Kestrel` (of `IIS`) server voor de backend en
-de `Angular` frontend met gebruik van het `ng serve` commando.
+Een ontwikkelaar draait lokaal de `Kestrel` (of `IIS`) server voor de back end en
+de `Angular` front end met gebruik van het `ng serve` commando.
 
 De afhankelijkheden van het software project worden lokaal gedraaid.
 Hierbij moet er gedacht worden aan bijvoorbeeld SQL Server, Elasticsearch, RabbitMQ, etc.
@@ -120,3 +126,23 @@ Om een archief te houden van oudere versies van de applicatie wordt er een
 `archive` map aangemaakt onder de Git branches.
 Wanneer er een nieuwe versie wordt uitgerold naar `master`, wordt er eerst de
 huidige `master` code verplaatst naar `archive/VERSIENUMMER`.
+
+## Versie nummering
+
+Versies worden op via het *Semantic versioning* systeem gedaan.
+Hierbij een quote over hoe dit systeem werkt van de officiele website.
+
+> Given a version number MAJOR.MINOR.PATCH, increment the:
+>
+>1. MAJOR version when you make incompatible API changes
+>2. MINOR version when you add functionality in a >backwards-compatible manner, and
+>3. PATCH version when you make backwards-compatible bug fixes.
+>
+> Additional labels for pre-release and build metadata are
+> available as extensions to the MAJOR.MINOR.PATCH format.
+
+Hierbij wordt versie `1.0.0` als de eerste publieke release gezien.
+Het is aan de ontwikkelaar die de verandering doorzet naar de `master`
+om er voor te zorgen dat het versie nummer juist wordt opgehoogd.
+Er wordt met Semantic versies gewerkt maar dit wordt niet hard
+afgedwongen.
