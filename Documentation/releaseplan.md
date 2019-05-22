@@ -21,8 +21,9 @@ frontend.
   - [Git](#git)
     - [Git Flow](#git-flow)
   - [Versie nummering](#versie-nummering)
-  - [Release proces](#release-proces)
   - [Deliverables](#deliverables)
+  - [Release management](#release-management)
+  - [Release process](#release-process)
 
 ## OTAP
 
@@ -169,14 +170,6 @@ blijven de applicaties die andere ontwikkelaars hebben geschreven intact.
 
 ---
 
-## Release proces
-
-Het release proces wordt automatisch uitgevoerd wanneer een ontwikkelaar het
-project naar de `master` branch toe pushed. Hierbij wordt zowel automatisch
-de backend als de frontend online gezet. De eventuele bijproducten kunnen nog wel
-apart moeten worden aangemaakt en handmatig worden uitgebracht. In dit geval zal
-er in de centrale documentatie een pagina zijn over hoe dit uitgevoerd moet worden.
-
 ## Deliverables
 
 Bij een release van het software product worden de volgende (bij) producten geleverd:
@@ -187,3 +180,30 @@ Bij een release van het software product worden de volgende (bij) producten gele
 - Zogeheten "patch notes" waarin genoteerd staat wat er is aangepast in deze versie.
 
 De documentatie en patch notes worden als aankondiging geplaatst op de frontend.
+
+## Release management
+
+Binnen dit project wordt een rolling release cycle gebruikt.
+Wanneer een **develop** branch af is wordt deze in de **master** gemerged.
+Zodra dit succesvol is gedaan, wordt er zo snel mogelijk een nieuwe release gemaakt.
+
+Deze release wordt aangekondigd in de vorm van een blog post en
+verdere referentie naar die blog post binnen social media.
+Bij grotere feature releases worden de stakeholders aangesproken
+binnen de daarvoor bedoelde communicatie stromen.
+De geschreven berichten worden voor de release geschreven door degene die de
+merge uitvoert.
+Dit bericht wordt in de pull request meegenomen en door de reviewer nagekeken.
+
+## Release process
+
+Een release wordt gedaan door een lid van het ontwikkel team met de
+rol configuratie manager.
+Voor de eerste release worden er in het `markdown` formaat instructies geschreven.
+Deze instructies worden meegenomen in de code en volgen hetzelfde proces
+als de source code zou doen.
+Wanneer een configuratie manager een release moet gaan doen zou hij/zij
+alleen deze instructies hoeven te volgen.
+
+Binnen deze instructies staat het bouwen van de frontend, backend en eventuele dependencies.
+Er wordt ook aangegeven hoe de oude software versie verplaatst moet worden naar het archief.
