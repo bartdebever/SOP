@@ -196,4 +196,4 @@ Het team loopt nu tegen 100+ regels C++ code aan die in moderne C++ vervangen wo
 Ook zijn er `TODO Fix this` comments gevonden uit 1970.
 
 Dit moet echter niet genegeerd worden binnen het project.
-Technical debt is belangrijk om op te lossen om de applicatie stabiel te houden
+Technical debt is belangrijk om de applicatie stabiel te houden.

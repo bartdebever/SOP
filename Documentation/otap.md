@@ -6,7 +6,9 @@ de verantwoording van de benodigde tooling.
 ## Automatische uitrol
 
 Om het testen van de applicatie binnen elke stap van het process makkelijker
-te maken worden `Productie en Acceptatie` automatisch uitgerold.
+te maken worden `Productie` en `Acceptatie` automatisch uitgerold.
+
+De `Test` en `Ontwikkel` omgevingen worden voor nu nog lokaal gedaan.
 
 ### Pushen naar Docker Hub
 
@@ -31,4 +33,17 @@ voor een build.
 
 ### Automatisch van Docker Hub afhalen
 
-WATCHTOWER
+[Watchtower](https://github.com/containrrr/watchtower)
+zorgt ervoor dat de Docker containers automatisch worden geüpdate
+wanneer er een nieuwe versie uit is.
+Wanneer de Watchtower Docker Container wordt opgestart, worden alle
+aanwezige containers automatisch geüpdate.
+
+## Verantwoording
+
+Watchtower en Docker containers worden gebruikt om de buildstraat simpel te houden.
+Door deze toolset toe te passen hoeft er geen SSH of FTP connectie gelegd te
+worden met de acceptatie of productie server.
+Een buildstraat loopt snel uit de hand wanneer er features worden toegevoegd.
+Met deze opstelling kunnen er servers worden toegevoegd en automatisch de updates
+krijgen zonder moeilijke configuratie.
