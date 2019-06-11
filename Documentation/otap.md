@@ -23,8 +23,31 @@ Docker images met tags. Dit betekend dat er geen externe tooling gebruikt hoeft
 te worden om de docker images te maken en op te zetten.
 
 ```yml
-TRAVIS CODE HIER
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
 ```
+
+Om de daadwerkelijke Docker push uit te voeren wordt een bash script gebruikt.
+
+```bash
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push fightcore/fightcore
+```
+
+Voor de acceptatie branch hoeft alleen het bash script worden aangepast
+zodat deze met de `acceptance` tag werkt.
+
+```bash
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push fightcore/fightcore:acceptance
+```
+
+[Source](https://docs.travis-ci.com/user/docker/)
 
 Voor de veiligheid van het systeem en omdat het project open source is, zijn
 de authenticatie gegevens binnen Travis encrypted opgeslagen.
